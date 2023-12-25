@@ -3,17 +3,19 @@ import LoginForm from "../components/AuthPage/LoginForm";
 import SignupForm from "../components/AuthPage/SignupForm";
 
 const AuthPage = () => {
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
   return (
-    <div className="width-full flex h-screen">
-      <div className="h-screen">
+    <div className="width-full flex h-screen bg-gray-900">
+      {/*       <div className="h-screen">
         <img src="/authbanner.jpg" className="w-full h-screen" alt="" />
-      </div>
+      </div> */}
       <div className="p-6 w-full  flex items-center justify-center">
         <div className="w-fit flex flex-col">
-          {login ? <LoginForm /> : <SignupForm />}
-          {login ? "Don't have an account?" : "Already have an account?"}{" "}
-          <span className="text-cyan-600">{login ? "Signup" : "Login"}</span>
+          {login ? (
+            <LoginForm login={login} setLogin={setLogin} />
+          ) : (
+            <SignupForm login={login} setLogin={setLogin} />
+          )}
         </div>
       </div>
     </div>
