@@ -13,7 +13,7 @@ const LoginForm = ({ login, setLogin }) => {
 
   return (
     <>
-      <section className="bg-gray-50 bg-gray-900 w-[85vw] md:w-[80vw] lg:w-[50vw] h-fit ">
+      <section className="bg-gray-50 bg-gray-900 w-[85vw] md:w-[80vw] lg:w-[55vw] h-fit m-auto">
         <div className="flex flex-col items-center justify-center sm:px-2 md:px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="#"

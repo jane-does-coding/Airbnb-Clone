@@ -5,12 +5,9 @@ import SignupForm from "../components/AuthPage/SignupForm";
 const AuthPage = () => {
   const [login, setLogin] = useState(false);
   return (
-    <div className="width-full flex h-screen bg-gray-900">
-      {/*       <div className="h-screen">
-        <img src="/authbanner.jpg" className="w-full h-screen" alt="" />
-      </div> */}
-      <div className="sm:p-2 md:p-4 lg:p-6 w-full p-0  flex items-center justify-center">
-        <div className="w-fit flex flex-col">
+    <div className="width-[100vw] flex h-screen dark:bg-gray-900 justify-center items-center">
+      <div className=" flex items-center justify-center m-auto bg-gray-900">
+        <div className="w-fit flex flex-col items-center justify-center m-auto">
           {login ? (
             <LoginForm login={login} setLogin={setLogin} />
           ) : (
