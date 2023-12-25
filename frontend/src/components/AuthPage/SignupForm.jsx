@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaRegLightbulb } from "react-icons/fa";
 
 const SignupForm = ({ login, setLogin }) => {
+  const [inputs, setInputs] = useState({
+    name: "",
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const onSubmit = () => {
+    console.log(inputs);
+  };
+
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-900 w-[50vw] h-fit">
@@ -21,7 +32,7 @@ const SignupForm = ({ login, setLogin }) => {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Create an account
               </h1>
-              <form className="space-y-2 md:space-y-4" action="#">
+              <div className="space-y-2 md:space-y-4">
                 {/* FLEX */}
                 <div className="flex gap-4">
                   <div>
@@ -38,6 +49,10 @@ const SignupForm = ({ login, setLogin }) => {
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Full Name"
                       required=""
+                      value={inputs.name}
+                      onChange={(e) =>
+                        setInputs({ ...inputs, name: e.target.value })
+                      }
                     />
                   </div>
                   <div>
@@ -54,6 +69,10 @@ const SignupForm = ({ login, setLogin }) => {
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Username"
                       required=""
+                      value={inputs.username}
+                      onChange={(e) =>
+                        setInputs({ ...inputs, username: e.target.value })
+                      }
                     />
                   </div>
                 </div>
@@ -72,6 +91,10 @@ const SignupForm = ({ login, setLogin }) => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name@company.com"
                     required=""
+                    value={inputs.email}
+                    onChange={(e) =>
+                      setInputs({ ...inputs, email: e.target.value })
+                    }
                   />
                 </div>
                 <div>
@@ -88,11 +111,15 @@ const SignupForm = ({ login, setLogin }) => {
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required=""
+                    value={inputs.password}
+                    onChange={(e) =>
+                      setInputs({ ...inputs, password: e.target.value })
+                    }
                   />
                 </div>
 
                 <button
-                  type="submit"
+                  onClick={onSubmit}
                   className="w-full text-white bg-gray-700 hover:bg-gray-600 transition focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
                   Sign in
@@ -108,7 +135,7 @@ const SignupForm = ({ login, setLogin }) => {
                     {login ? "Signup" : "Login"}
                   </span>
                 </p>
-              </form>
+              </div>
             </div>
           </div>
         </div>
