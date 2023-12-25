@@ -9,7 +9,7 @@ const AuthPage = () => {
       {/*       <div className="h-screen">
         <img src="/authbanner.jpg" className="w-full h-screen" alt="" />
       </div> */}
-      <div className="p-6 w-full  flex items-center justify-center">
+      <div className="sm:p-2 md:p-4 lg:p-6 w-full p-0  flex items-center justify-center">
         <div className="w-fit flex flex-col">
           {login ? (
             <LoginForm login={login} setLogin={setLogin} />

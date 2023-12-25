@@ -4,8 +4,8 @@ import { FaRegLightbulb } from "react-icons/fa";
 const LoginForm = ({ login, setLogin }) => {
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-900 w-[40vw] h-fit">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <section className="bg-gray-50 bg-gray-900 w-[85vw] md:w-[80vw] lg:w-[50vw] h-fit ">
+        <div className="flex flex-col items-center justify-center sm:px-2 md:px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="#"
             className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"

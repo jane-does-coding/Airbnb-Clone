@@ -15,7 +15,7 @@ const SignupForm = ({ login, setLogin }) => {
 
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-900 w-[50vw] h-fit">
+      <section className="bg-gray-50 bg-gray-900 w-[95vw] md:w-[70vw] lg:w-[55vw]  h-fit">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="#"
