@@ -1,27 +1,35 @@
 import React from "react";
-import Note from "../components/Note/Note";
+import Note from "../components/Dashboard/Note";
 
 const HomePage = () => {
   const notes = [
     {
-      heading: "Note1",
-      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, unde! Harum dolores doloribus, provident nesciunt aliquid nisi aut amet esse dignissimos. Officia debitis quod quibusdam aliquid illum nulla, corporis veritatis?",
+      header: "Note1",
+      text: "Lorem ipsum dolor sit",
+      labels: ["label1", "label2"],
+      starred: true,
     },
     {
-      heading: "Note2",
+      header: "Note2",
       text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, unde! Harum dolores doloribus, provident nesciunt aliquid nisi aut amet esse dignissimos. Officia debitis quod quibusdam aliquid illum nulla, corporis veritatis?",
+      labels: ["label1", "label2", "label3"],
+      starred: false,
     },
     {
-      heading: "Note3",
+      header: "Note3",
       text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, unde! Harum dolores doloribus, provident nesciunt aliquid nisi aut amet esse dignissimos. Officia debitis quod quibusdam aliquid illum nulla, corporis veritatis?",
+      labels: [],
+      starred: true,
     },
     {
-      heading: "Note4",
+      header: "Note4",
       text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, unde! Harum dolores doloribus, provident nesciunt aliquid nisi aut amet esse dignissimos. Officia debitis quod quibusdam aliquid illum nulla, corporis veritatis?",
+      labels: ["label1"],
+      starred: false,
     },
   ];
   return (
-    <div className="w-full h-screen bg-gray-800 flex flex-col px-12 pt-10 ">
+    <div className="w-full min-h-screen bg-gray-800 flex flex-col px-12 pt-10 ">
       {/* Header? */}
       {/* Input Field */}
       <input
@@ -32,12 +40,9 @@ const HomePage = () => {
 
       {/* Notes */}
       <div className="grid grid-cols-auto md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 my-4 mt-10">
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
+        {notes.map((note, index) => (
+          <Note note={note} key={index} />
+        ))}
       </div>
     </div>
   );
