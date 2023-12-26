@@ -55,7 +55,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="h-screen fixed w-[17.5rem] border-r-2 pt-4 bg-gray-800">
+    <div className="h-screen fixed w-[17.5rem] pt-4 bg-gray-800">
       {/* Header */}
       <a
         href="/"

@@ -14,9 +14,7 @@ const Layout = ({ children }) => {
           <div className="w-[17.5rem] fixed h-screen border-r-4">
             <Sidebar />
           </div>
-          <div className="w-[calc(100vw - 17.5rem)] ml-[17.5rem]">
-            {children}
-          </div>
+          <div className="w-full ml-[17.5rem]">{children}</div>
         </div>
       )}
     </>
