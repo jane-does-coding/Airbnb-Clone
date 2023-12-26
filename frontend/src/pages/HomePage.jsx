@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Note from "../components/Dashboard/Note";
+import Filters from "../components/Dashboard/Filters";
 
 const HomePage = () => {
   const notes = [
@@ -28,9 +29,15 @@ const HomePage = () => {
       starred: false,
     },
   ];
+
+  const [filter, setFilter] = useState(null);
+
+  const filterNotes = (label) => {
+    console.log(label);
+    setFilter(label);
+  };
   return (
     <div className="w-full min-h-screen bg-gray-800 flex flex-col px-12 pt-10 ">
-      {/* Header? */}
       {/* Input Field */}
       <input
         type="text"
@@ -38,11 +45,18 @@ const HomePage = () => {
         className="mx-auto p-6 py-4 h-fit w-[60%] bg-gray-900 rounded-md outline-none text-lg text-white shadow-lg "
       />
 
+      {/* Header? */}
+      <Filters filter={filterNotes} />
+
       {/* Notes */}
       <div className="grid grid-cols-auto md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 my-4 mt-10">
-        {notes.map((note, index) => (
-          <Note note={note} key={index} />
-        ))}
+        {notes.map((note, index) =>
+          filter && filter != "label" ? (
+            note.labels.includes(filter) && <Note note={note} key={index} />
+          ) : (
+            <Note note={note} key={index} />
+          )
+        )}
       </div>
     </div>
   );
