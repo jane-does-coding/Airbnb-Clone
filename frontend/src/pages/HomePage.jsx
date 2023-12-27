@@ -31,7 +31,7 @@ const HomePage = () => {
   ];
 
   const [filter, setFilter] = useState(null);
-  const [listView, setListView] = useState(true);
+  const [listView, setListView] = useState(false);
 
   const filterNotes = (label) => {
     console.log(label);
