@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Note from "../components/Dashboard/Note";
 import Filters from "../components/Dashboard/Filters";
+import TextField from "../components/Dashboard/TextField";
 
 const HomePage = () => {
   const notes = [
@@ -43,34 +44,34 @@ const HomePage = () => {
     console.log(listView);
   };
   return (
-    <div className="w-full min-h-screen bg-gray-800 flex flex-col px-12 pt-10 ">
+    <div className="w-full min-h-screen bg-gray-800 flex flex-col px-12 pt-10 items-center ">
       {/* Input Field */}
-      <input
-        type="text"
-        placeholder="Take a note..."
-        className="mx-auto p-6 py-4 h-fit w-[60%] bg-gray-900 rounded-md outline-none text-lg text-white shadow-lg "
-      />
+      <div className="w-full">
+        <TextField />
+      </div>
 
       {/* Header? */}
-      <Filters
-        filter={filterNotes}
-        switchView={switchView}
-        listView={listView}
-      />
+      <div className="w-full">
+        <Filters
+          filter={filterNotes}
+          switchView={switchView}
+          listView={listView}
+        />
+      </div>
 
       {/* Notes */}
       <div
         className={`${
           listView
-            ? "flex flex-col"
-            : "grid grid-cols-auto md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
-        } gap-4 my-4 mt-10`}
+            ? "flex flex-col gap-2"
+            : "grid grid-cols-auto md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4"
+        }  my-4 mt-10 w-full`}
       >
         {notes.map((note, index) =>
           filter && filter != "label" ? (
             note.labels.includes(filter) && <Note note={note} key={index} />
           ) : (
-            <Note note={note} key={index} />
+            <Note note={note} key={index} listView={listView} />
           )
         )}
       </div>
