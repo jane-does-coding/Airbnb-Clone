@@ -11,6 +11,7 @@ import Input from "../Inputs/Input"
 import toast from "react-hot-toast"
 import Button from "../Button"
 import { Noto_Sans_Tamil_Supplement } from "next/font/google"
+import { signIn } from "next-auth/react"
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal()
@@ -60,7 +61,7 @@ const RegisterModal = () => {
       <hr />
       <div className="flex flex-col gap-4">
         <Button outline label="Continue with Google" icon={FcGoogle} onClick={() => {}} />
-        <Button outline label="Continue with Github" icon={AiFillGithub} onClick={() => {}} />
+        <Button outline label="Continue with Github" icon={AiFillGithub} onClick={() => signIn("github")} />
       </div>
       <div className="text-neutral-500 text-center mt-2 font-light">
         <div className="flex flex-row items-center gap-2 justify-center">
