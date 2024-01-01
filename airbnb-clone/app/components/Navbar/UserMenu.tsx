@@ -5,9 +5,10 @@ import { useCallback, useState } from "react"
 import MenuItem from "./MenuItem"
 import useRegisterModal from "@/app/hooks/useRegisterModal"
 import useLoginModal from "@/app/hooks/useLoginModal"
-import { User } from "@prisma/client"
+import { signOut } from "next-auth/react"
+import { SafeUser } from "@/app/types"
 
-const UserMenu = ({currentUser}: {currentUser?: User | null}) => {
+const UserMenu = ({currentUser}: {currentUser?: SafeUser | null}) => {
   const [isOpen, setIsOpen] = useState(false)
   const registerModal = useRegisterModal()
   const loginModal = useLoginModal()
@@ -40,8 +41,8 @@ const UserMenu = ({currentUser}: {currentUser?: User | null}) => {
                 <MenuItem onClick={() => {}} label="My reservations" />
                 <MenuItem onClick={() => {}} label="Airbnb my home" />
                 <hr />
-                <MenuItem onClick={() => {}} label="Logout" />
-            </>
+                <MenuItem onClick={() => signOut()} label="Logout" />
+              </>
             ) : (
               <>
                 <MenuItem onClick={loginModal.onOpen} label="Login" />
