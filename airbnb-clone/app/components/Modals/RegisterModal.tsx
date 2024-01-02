@@ -1,6 +1,6 @@
 "use client"
 import axios from "axios"
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import { AiFillGithub } from "react-icons/ai"
 import {FcGoogle} from "react-icons/fc"
 import {FieldValues, SubmitHandler, useForm} from "react-hook-form"
@@ -10,9 +10,7 @@ import Heading from "../Heading"
 import Input from "../Inputs/Input"
 import toast from "react-hot-toast"
 import Button from "../Button"
-import { Noto_Sans_Tamil_Supplement } from "next/font/google"
 import { signIn } from "next-auth/react"
-import LoginModal from "./LoginModal"
 import useLoginModal from "@/app/hooks/useLoginModal"
 
 const RegisterModal = () => {
@@ -48,6 +46,11 @@ const RegisterModal = () => {
       setIsLoading(false)
     })
   }
+  
+  const onToggle = useCallback(() => {
+    registerModal.onClose()
+    loginModal.onOpen()
+  }, [loginModal, registerModal])
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -70,7 +73,7 @@ const RegisterModal = () => {
       <div className="text-neutral-500 text-center mt-2 font-light">
         <div className="flex flex-row items-center gap-2 justify-center">
           <p>Already have an account?</p>
-          <p onClick={registerModal.onClose} className="text-neutral-800 cursor-pointer hover:underline">Login</p>
+          <p onClick={onToggle} className="text-neutral-800 cursor-pointer hover:underline">Login</p>
         </div>
       </div>
     </div>
