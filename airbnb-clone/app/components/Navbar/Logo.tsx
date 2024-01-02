@@ -6,7 +6,7 @@ const Logo = () => {
   const router = useRouter()
 
   return (
-    <Image className="hidden md:block" alt="logo" src={"/images/logo.png"} width={100} height={100} />
+    <Image className="hidden md:block" alt="logo" src={"/images/logo.png"} width={100} height={50} />
   )
 }
 
