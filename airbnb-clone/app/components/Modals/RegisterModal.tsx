@@ -12,9 +12,12 @@ import toast from "react-hot-toast"
 import Button from "../Button"
 import { Noto_Sans_Tamil_Supplement } from "next/font/google"
 import { signIn } from "next-auth/react"
+import LoginModal from "./LoginModal"
+import useLoginModal from "@/app/hooks/useLoginModal"
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal()
+  const loginModal = useLoginModal()
   const [isLoading, setIsLoading] = useState(false)
 
 
@@ -37,6 +40,7 @@ const RegisterModal = () => {
 
     axios.post("/api/register", data).then(() => {
       registerModal.onClose()
+      loginModal.onOpen()
     }).catch((error) => {
       console.log(error)
       toast.error("Something went wrong")
@@ -60,7 +64,7 @@ const RegisterModal = () => {
     <div className="flex flex-col gap-4 mt-3">
       <hr />
       <div className="flex flex-col gap-4">
-        <Button outline label="Continue with Google" icon={FcGoogle} onClick={() => {}} />
+        <Button outline label="Continue with Google" icon={FcGoogle} onClick={() => signIn("google")} />
         <Button outline label="Continue with Github" icon={AiFillGithub} onClick={() => signIn("github")} />
       </div>
       <div className="text-neutral-500 text-center mt-2 font-light">
