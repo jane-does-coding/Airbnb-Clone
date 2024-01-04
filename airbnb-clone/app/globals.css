@@ -26,3 +26,10 @@ body,
 ::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0);
 }
+
+.leaflet-bottom,
+.leaflet-control,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 0 !important;
+}
