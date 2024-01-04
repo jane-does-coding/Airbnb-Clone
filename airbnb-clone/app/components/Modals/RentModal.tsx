@@ -11,6 +11,7 @@ import CountrySelect from "../Inputs/CountrySelect"
 import dynamic from "next/dynamic"
 import Counter from "../Inputs/Counter"
 import ImageUpload from "../Inputs/ImageUpload"
+import Input from "../Inputs/Input"
 
 enum STEPS {
   CATEGORY = 0,
@@ -25,6 +26,7 @@ const RentModal = () => {
   const rentModal = useRentModal()
 
   const [step, setStep] = useState(STEPS.CATEGORY)
+  const [isLoading, setIsLoading] = useState(false)
 
   const {register, handleSubmit, setValue, watch, formState: {errors}, reset} = useForm<FieldValues>({
     defaultValues: {
@@ -122,6 +124,27 @@ const RentModal = () => {
       <div className="flex flex-col gap-8">
         <Heading title="Add a photo of your place" subtitle="Show guests what your place looks like!" />
         <ImageUpload onChange={(value) => setCustomValue("imageSrc", value)} value={imageSrc} />
+      </div>
+    )
+  }
+
+  if(step === STEPS.DESCRIPTION){
+    bodyContent = (
+      <div className="flex flex-col gap-4 ">
+        <Heading title={"How would you describe your place?"} subtitle="Short and sweet works best!" />
+        <Input id="title" label="Title" disabled={isLoading} register={register} errors={errors} required />
+        <hr />
+        <Input id="description" label="Description" disabled={isLoading} register={register} errors={errors} required />
+        <br />
+      </div>
+    )
+  }
+
+  if(step === STEPS.PRICE){
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading title="Now, set your price" subtitle="How much do you charge per night?" />
+        <Input id="price" label="Price" formatPrice type="number" disabled={isLoading} register={register} errors={errors} required />
       </div>
     )
   }
