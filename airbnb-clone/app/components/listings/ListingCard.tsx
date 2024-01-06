@@ -1,7 +1,7 @@
 "use client"
 
 import useCountries from "@/app/hooks/useCountries"
-import { SafeListing, SafeUser } from "@/app/types"
+import { SafeListing, SafeReservation, SafeUser } from "@/app/types"
 import { Listing, Reservation } from "@prisma/client"
 import { useRouter } from "next/navigation"
 import { useCallback, useMemo } from "react"
@@ -10,7 +10,7 @@ import Image from "next/image"
 import HeartButton from "../HeartButton"
 import Button from "../Button"
 
-const ListingCard = ({data, reservation, onAction, disabled, actionId = "", actionLabel, currentUser}: {data: SafeListing, reservation?: Reservation, onAction?: (id: string) => void, disabled?: boolean, actionLabel?: string, actionId?: string, currentUser?: SafeUser | null}) => {
+const ListingCard = ({data, reservation, onAction, disabled, actionId = "", actionLabel, currentUser}: {data: SafeListing, reservation?: SafeReservation, onAction?: (id: string) => void, disabled?: boolean, actionLabel?: string, actionId?: string, currentUser?: SafeUser | null}) => {
   const router = useRouter()
   const {getByValue} = useCountries()
 
