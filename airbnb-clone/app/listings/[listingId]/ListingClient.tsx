@@ -6,7 +6,7 @@ import ListingHead from "@/app/components/listings/ListingHead"
 import ListingInfo from "@/app/components/listings/ListingInfo"
 import ListingReservation from "@/app/components/listings/ListingReservation"
 import useLoginModal from "@/app/hooks/useLoginModal"
-import { SafeListing, SafeUser } from "@/app/types"
+import { SafeListing, SafeReservation, SafeUser } from "@/app/types"
 import { Reservation } from "@prisma/client"
 import axios from "axios"
 import { eachDayOfInterval, differenceInDays, differenceInCalendarDays } from "date-fns"
@@ -22,7 +22,7 @@ const initialDateRange = {
 }
 
 
-const ListingClient = ({listing, currentUser, reservations=[]}: {reservations?: Reservation[], listing: SafeListing & {user: SafeUser}, currentUser?: SafeUser | null}) => {
+const ListingClient = ({listing, currentUser, reservations=[]}: {reservations?: SafeReservation[], listing: SafeListing & {user: SafeUser}, currentUser?: SafeUser | null}) => {
   
   const loginModal = useLoginModal()
   const router = useRouter()

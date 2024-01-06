@@ -5,6 +5,7 @@ import getListings from './actions/GetListings'
 import ListingCard from './components/listings/ListingCard'
 import getCurrentUser from './actions/GetCurrentUser'
 import { SafeListing } from './types'
+import getReservations from './actions/GetReservations'
 
 export default async function Home() {
   
