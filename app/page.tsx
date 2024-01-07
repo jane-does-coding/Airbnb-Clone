@@ -1,11 +1,9 @@
-import Image from 'next/image'
+export const dynamic = 'force-dynamic'
 import Container from './components/Container'
 import EmptyState from './components/EmptyState'
 import getListings, { IListingsParams } from './actions/GetListings'
 import ListingCard from './components/listings/ListingCard'
 import getCurrentUser from './actions/GetCurrentUser'
-import { SafeListing } from './types'
-import getReservations from './actions/GetReservations'
 
 interface HomeProps {
   searchParams: IListingsParams
