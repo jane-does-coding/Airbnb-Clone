@@ -1,15 +1,18 @@
 import Image from 'next/image'
 import Container from './components/Container'
 import EmptyState from './components/EmptyState'
-import getListings from './actions/GetListings'
+import getListings, { IListingsParams } from './actions/GetListings'
 import ListingCard from './components/listings/ListingCard'
 import getCurrentUser from './actions/GetCurrentUser'
 import { SafeListing } from './types'
 import getReservations from './actions/GetReservations'
 
-export default async function Home() {
-  
-  const listings = await getListings()
+interface HomeProps {
+  searchParams: IListingsParams
+}
+
+const Home = async({searchParams}: HomeProps) => {
+  const listings = await getListings(searchParams)
   const currentUser = await getCurrentUser()
 
   if(listings.length === 0){
@@ -30,3 +33,5 @@ export default async function Home() {
     </Container>  
   )
 }
+
+export default Home
