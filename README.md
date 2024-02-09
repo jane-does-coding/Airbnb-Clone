@@ -54,5 +54,3 @@ npm start
 npm run dev
 ```
 
-### Live Website:
-[Live Demo](https://property-rent-eight.vercel.app/)
