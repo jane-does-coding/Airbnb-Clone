@@ -1,6 +1,9 @@
 ## Airbnb Clone
 <img width="959" alt="airbnb" src="https://github.com/YevheniiaSimaka/Airbnb-Clone/assets/112284703/9d5cd4ae-86b6-4cd8-9670-00efd42c7794">
 
+## Description
+Built as a clone of Airbnb, this platform offers users the ability to list their properties or book accommodations seamlessly. With end-to-end encryption for security and the speed enhancement of Next.js, users can trust in secure transactions while enjoying a fast and efficient browsing experience.
+
 ## Tech Stack:
 [![My Skills](https://skillicons.dev/icons?i=vite,ts,tailwind,prisma,mongodb,nextjs,react)](https://skillicons.dev)
 
