@@ -2,7 +2,7 @@
 <img width="959" alt="airbnb" src="https://github.com/YevheniiaSimaka/Airbnb-Clone/assets/112284703/9d5cd4ae-86b6-4cd8-9670-00efd42c7794">
 
 ## Tech Stack:
-[![My Skills](https://skillicons.dev/icons?i=html,ts,tailwind,prisma,mongodb,nextjs,react)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=vite,ts,tailwind,prisma,mongodb,nextjs,react)](https://skillicons.dev)
 
 ### Cloning the repository
 
