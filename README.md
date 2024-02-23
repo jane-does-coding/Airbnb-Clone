@@ -1,4 +1,4 @@
-## Airbnb Clone
+##  Airbnb Clone
 <img width="959" alt="airbnb" src="https://github.com/YevheniiaSimaka/Airbnb-Clone/assets/112284703/9d5cd4ae-86b6-4cd8-9670-00efd42c7794">
 
 ## Live Demo
