@@ -1,5 +1,5 @@
 ##  Airbnb Clone
-<img width="959" alt="airbnb" src="https://github.com/YevheniiaSimaka/Airbnb-Clone/assets/112284703/9d5cd4ae-86b6-4cd8-9670-00efd42c7794">
+![1](https://github.com/YevheniiaSimaka/Airbnb-Clone/assets/112284703/39302486-e4aa-4717-92f0-0c9e407c88a7)
 
 ## Live Demo
 [Airbnb Live Demo](https://property-rent-eight.vercel.app/)
